@@ -58,7 +58,13 @@
         margin-top: 0;
       }
 
-      .btn {
+      .btn-container {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+      }
+
+      .btn-container .btn {
         display: inline-block;
         background-color: #FFF;
         border-radius: 10px;
@@ -69,7 +75,7 @@
         animation: fadeInUp 1s ease;
       }
 
-      .btn:hover {
+      .btn-container .btn:hover {
         background-color: #CCC;
       }
 
@@ -99,13 +105,26 @@
   </head>
   <body>
     <div class="container">
-      <h1>炽阳001的博客</h1>
+      <div class="btn-container">
+        <h1>炽阳001的博客</h1>
+        <a href="https://m.bilibili.com/space/404891612?from=search" class="btn">点击进入炽阳001的 Bilibili 主页</a>
+      </div>
       <div class="post">
         <h2>第一篇博客文章</h2>
-        <p>这是我的第一篇博客文章。欢迎来到我的博客！</p>
+        <p>这是我的第一篇博客文章的内容，欢迎大家来阅读。</p>
       </div>
       <div class="post">
         <h2>第二篇博客文章</h2>
-        <p>这是我的第二篇博客文章。请多多关注我的博客！</p>
+        <p>这是我的第二篇博客文章，内容正在努力创作中，敬请期待。</p>
       </div>
-     
+      <div class="post">
+        <h2>第三篇博客文章</h2>
+        <p>这是我的第三篇博客文章，内容正在努力创作中，敬请期待。</p>
+      </div>
+      <div class="bio">
+        <h2>个人简介</h2>
+        <p>大家好，我是炽阳001，在 B 站上有着自己的 UP 主账号，号码是 239500。欢迎大家来关注我。我是一名喜欢编程的大学生，喜欢分享自己的学习和生活经验。希望我的博客文章可以对大家有所帮助，也希望大家可以在评论区中多多留言交流。</p>
+      </div>
+    </div>
+  </body>
+</html>
