@@ -28,7 +28,19 @@
           background-position: left;
         }
       }
-
+<script>
+		function launchFirework() {
+			var firework = document.createElement('div');
+			firework.className = 'firework';
+			firework.style.left = Math.random() * 100 + '%';
+			firework.style.top = Math.random() * 100 + '%';
+			document.body.appendChild(firework);
+			setTimeout(function() {
+				document.body.removeChild(firework);
+			}, 500);
+		}
+		setInterval(launchFirework, 1000);
+	</script>
       .container {
         max-width: 800px;
         margin: 0 auto;
