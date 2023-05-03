@@ -1,129 +1,122 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>炽阳001的博客</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
-      background-attachment: fixed;
-      background-size: cover;
-    }
-    
-    #header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px;
-      background: linear-gradient(to bottom, #f5e7e7 0%, #c9d8c5 100%);
-    }
-    
-    h1 {
-      font-size: 40px;
-      color: #fff;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    }
+	<title>炽阳001的博客</title>
+	<style type="text/css">
+		body {
+			background: linear-gradient(to bottom right, #ff0066, #6600cc);
+			background-size: cover;
+			margin: 0;
+			padding: 0;
+			font-family: Arial, sans-serif;
+		}
 
-    button {
-      background-color: #ffcc66;
-      color: white;
-      font-size: 20px;
-      border: none;
-      border-radius: 5px;
-      padding: 10px 20px;
-      margin-right: 20px;
-      transition: all 0.3s ease;
-      box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    }
+		h1 {
+			color: #fff;
+			font-size: 3em;
+			text-align: center;
+			margin: 0;
+			padding-top: 20px;
+		}
 
-    button:hover {
-      background-color: #ff9900;
-      cursor: pointer;
-    }
-    
-    #main {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-      background-color: rgba(255, 255, 255, 0.8);
-      box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    }
-    
-    .post {
-      margin-bottom: 40px;
-    }
-    
-    h2 {
-      font-size: 28px;
-      color: #333;
-      margin-bottom: 10px;
-    }
-    
-    p {
-      font-size: 18px;
-      color: #666;
-      line-height: 1.5;
-    }
-    
-    .bio {
-      margin-top: 40px;
-      text-align: center;
-    }
-    
-    .bio h2 {
-      font-size: 28px;
-      color: #333;
-      margin-bottom: 20px;
-    }
-    
-    .bio p {
-      font-size: 20px;
-      color: #666;
-      line-height: 1.5;
-    }
-    
-    #footer {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      font-size: 18px;
-      color: #fff;
-      background-color: #333;
-    }
-  </style>
+		button {
+			background-color: #00ccff;
+			border: none;
+			color: white;
+			padding: 15px 32px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 20px 20px;
+			border-radius: 30px;
+		}
+
+		button:hover {
+			background-color: #0077cc;
+			cursor: pointer;
+		}
+
+		.content-wrapper {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			margin-top: 50px;
+			margin-bottom: 50px;
+		}
+
+		.content-box {
+			width: 300px;
+			height: 200px;
+			background-color: #fff;
+			margin: 20px;
+			box-shadow: 0 0 10px rgba(0,0,0,0.5);
+			border-radius: 10px;
+			overflow: hidden;
+			position: relative;
+		}
+
+		.content-box h2 {
+			font-size: 1.5em;
+			padding: 10px;
+			margin: 0;
+			background-color: #00ccff;
+			color: #fff;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			z-index: 1;
+		}
+
+		.content-box .content-link {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 2;
+		}
+
+		.content-box .content-link a {
+			display: block;
+			height: 100%;
+			width: 100%;
+			text-decoration: none;
+			color: #000;
+		}
+
+		.content-box:hover {
+			box-shadow: 0 0 20px rgba(0,0,0,0.8);
+			transform: translateY(-5px);
+		}
+
+		.time {
+			background-color: #000;
+			color: #fff;
+			font-size: 1.2em;
+			text-align: center;
+			padding: 10px;
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			z-index: 3;
+		}
+
+		.time span {
+			font-weight: bold;
+		}
+	</style>
 </head>
 <body>
-  <div id="header">
-    <h1>炽阳001的博客</h1>
-    <a href="https://m.bilibili.com/space/404891612?from=search" target="_blank">
-      <button>点击进入炽阳001B站主页</button>
-    </a>
-  </div>
-  <div id="main">
-    <div class="post">
-      <h2>第二篇博客</h2>
-<div class="blog-post">
-  <p>这是我的第二篇博客文章，我想分享一下最近我在学习编程中遇到的问题和解决方法。我觉得这些经验对于其他初学者也会有所帮助。</p>
-  <p>最近我在学习Python编程语言，我发现在学习过程中遇到了一些难以理解的概念。其中一个让我困扰了很长时间的问题是如何理解Python中的装饰器。</p>
-  <p>首先，我了解到装饰器是一种特殊的函数，它可以在不改变原函数代码的情况下，为函数添加额外的功能。这听起来很神奇，但实际上它并不难理解。</p>
-  <p>简单来说，装饰器可以像是一个外壳，包裹在原函数的周围。当我们调用这个函数时，实际上是在调用这个外壳函数。这个外壳函数可以在调用原函数之前或之后执行一些操作，比如记录日志、计时等。</p>
-  <p>下面是一个简单的装饰器示例：</p>
-  <pre><code>
-  def my_decorator(func):
-      def wrapper():
-          print("Something is happening before the function is called.")
-          func()
-          print("Something is happening after the function is called.")
-      return wrapper
-
-  @my_decorator
-  def say_hello():
-      print("Hello!")
-
-  say_hello()
-  </code></pre>
-</div>
+	<h1>炽阳001的博客</h1>
+	<a href="https://m.bilibili.com/space/404891612?from=search"><button>点击进入炽阳001B站主页</button></a>
+	<div class="content-wrapper">
+		<div class="content-box">
+			<h2>第一个博客</h2>
+			<div class="content-link">
+				<a href="#"></a>
+			</div>
+		</div>
+		
