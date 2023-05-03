@@ -1,99 +1,111 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
     <title>炽阳001的博客</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <meta charset="UTF-8">
     <style>
-      /* 设置背景图 */
       body {
-        background-image: url("https://example.com/background.jpg");
-        background-size: cover;
+        background: linear-gradient(to bottom right, #F0F, #00F);
+        animation: gradient 10s ease infinite;
       }
 
-      /* 设置博客文章样式 */
+      @keyframes gradient {
+        0% {
+          background-position: left;
+        }
+        50% {
+          background-position: right;
+        }
+        100% {
+          background-position: left;
+        }
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 50px;
+      }
+
       .post {
-        background-color: white;
+        background-color: #FFF;
+        border-radius: 10px;
         padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        margin-bottom: 30px;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+        animation: fadeInUp 1s ease;
       }
 
-      /* 设置标题样式 */
-      h1 {
-        font-size: 36px;
-        color: white;
-        text-shadow: 2px 2px 5px black;
-        text-align: center;
-        margin-top: 100px;
-        margin-bottom: 50px;
+      .post:last-child {
+        margin-bottom: 0;
       }
 
-      /* 设置动画效果 */
-      .animated {
-        animation-duration: 1s;
-        animation-fill-mode: both;
+      .post h2 {
+        font-size: 24px;
+        margin-top: 0;
       }
 
-      /* 设置个人简介样式 */
       .bio {
-        background-color: white;
+        background-color: #FFF;
+        border-radius: 10px;
         padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.5);
-        margin-top: 50px;
-        margin-bottom: 50px;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+        animation: fadeInUp 1s ease;
       }
 
-      /* 设置链接样式 */
-      a {
-        color: white;
+      .bio h2 {
+        font-size: 24px;
+        margin-top: 0;
+      }
+
+      .btn {
+        display: inline-block;
+        background-color: #FFF;
+        border-radius: 10px;
+        padding: 10px 20px;
         text-decoration: none;
-        border-bottom: 2px solid white;
+        color: #000;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+        animation: fadeInUp 1s ease;
       }
 
-      /* 设置链接鼠标悬停样式 */
-      a:hover {
-        color: white;
-        border-bottom: 2px solid white;
-        animation: shake 0.5s;
+      .btn:hover {
+        background-color: #CCC;
       }
 
-      /* 设置抖动动画效果 */
-      @keyframes shake {
-        0% { transform: translate(1px, 1px) rotate(0deg); }
-        10% { transform: translate(-1px, -2px) rotate(-1deg); }
-        20% { transform: translate(-3px, 0px) rotate(1deg); }
-        30% { transform: translate(3px, 2px) rotate(0deg); }
-        40% { transform: translate(1px, -1px) rotate(1deg); }
-        50% { transform: translate(-1px, 2px) rotate(-1deg); }
-        60% { transform: translate(-3px, 1px) rotate(0deg); }
-        70% { transform: translate(3px, 1px) rotate(-1deg); }
-        80% { transform: translate(-1px, -1px) rotate(1deg); }
-        90% { transform: translate(1px, 2px) rotate(0deg); }
-        100% { transform: translate(1px, -2px) rotate(-1deg); }
+      @media (max-width: 480px) {
+        .container {
+          padding: 20px;
+        }
+        .post h2 {
+          font-size: 20px;
+        }
+        .bio h2 {
+          font-size: 20px;
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
     </style>
   </head>
   <body>
-          </h1>
-      <div class="post animated fadeInUp">
+    <div class="container">
+      <h1>炽阳001的博客</h1>
+      <div class="post">
         <h2>第一篇博客文章</h2>
         <p>这是我的第一篇博客文章。欢迎来到我的博客！</p>
       </div>
-      <div class="post animated fadeInUp">
+      <div class="post">
         <h2>第二篇博客文章</h2>
         <p>这是我的第二篇博客文章。请多多关注我的博客！</p>
       </div>
-      <div class="bio animated fadeInUp">
-        <h2>个人简介</h2>
-        <p>大家好，我是炽阳001。我是一名博主，也是一名UP主。我在B站上的账号是<a href="https://space.bilibili.com/239500">239500</a>。欢迎来关注我！</p>
-      </div>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-    <script>
-      new WOW().init();
-    </script>
-  </body>
-</html>
+     
