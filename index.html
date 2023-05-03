@@ -5,42 +5,23 @@
     <meta charset="UTF-8">
     <style>
       body {
-        background: linear-gradient(to bottom right, #005C97, #363795, #005C97);
-        animation: gradient 15s ease infinite;
+        background: linear-gradient(45deg, #EE82EE, #4682B4, #FFA500);
+        background-size: 400% 400%;
+        animation: gradient 10s ease infinite;
       }
-.firework {
-			position: absolute;
-			width: 10px;
-			height: 10px;
-			background: #fff;
-			border-radius: 50%;
-			box-shadow: 0 0 20px #fff;
-			animation: explode 0.5s ease-out;
-		}
+
       @keyframes gradient {
         0% {
-          background-position: left;
+          background-position: 0% 50%;
         }
         50% {
-          background-position: right;
+          background-position: 100% 50%;
         }
         100% {
-          background-position: left;
+          background-position: 0% 50%;
         }
       }
-<script>
-		function launchFirework() {
-			var firework = document.createElement('div');
-			firework.className = 'firework';
-			firework.style.left = Math.random() * 100 + '%';
-			firework.style.top = Math.random() * 100 + '%';
-			document.body.appendChild(firework);
-			setTimeout(function() {
-				document.body.removeChild(firework);
-			}, 500);
-		}
-		setInterval(launchFirework, 1000);
-	</script>
+   
       .container {
         max-width: 800px;
         margin: 0 auto;
