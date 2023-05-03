@@ -1,122 +1,130 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>炽阳001的博客</title>
-	<style type="text/css">
-		body {
-			background: linear-gradient(to bottom right, #ff0066, #6600cc);
-			background-size: cover;
-			margin: 0;
-			padding: 0;
-			font-family: Arial, sans-serif;
-		}
+  <head>
+    <title>炽阳001的博客</title>
+    <meta charset="UTF-8">
+    <style>
+      body {
+        background: linear-gradient(to bottom right, #F0F, #00F);
+        animation: gradient 10s ease infinite;
+      }
 
-		h1 {
-			color: #fff;
-			font-size: 3em;
-			text-align: center;
-			margin: 0;
-			padding-top: 20px;
-		}
+      @keyframes gradient {
+        0% {
+          background-position: left;
+        }
+        50% {
+          background-position: right;
+        }
+        100% {
+          background-position: left;
+        }
+      }
 
-		button {
-			background-color: #00ccff;
-			border: none;
-			color: white;
-			padding: 15px 32px;
-			text-align: center;
-			text-decoration: none;
-			display: inline-block;
-			font-size: 16px;
-			margin: 20px 20px;
-			border-radius: 30px;
-		}
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 50px;
+      }
 
-		button:hover {
-			background-color: #0077cc;
-			cursor: pointer;
-		}
+      .post {
+        background-color: #FFF;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 30px;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+        animation: fadeInUp 1s ease;
+      }
 
-		.content-wrapper {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: center;
-			margin-top: 50px;
-			margin-bottom: 50px;
-		}
+      .post:last-child {
+        margin-bottom: 0;
+      }
 
-		.content-box {
-			width: 300px;
-			height: 200px;
-			background-color: #fff;
-			margin: 20px;
-			box-shadow: 0 0 10px rgba(0,0,0,0.5);
-			border-radius: 10px;
-			overflow: hidden;
-			position: relative;
-		}
+      .post h2 {
+        font-size: 24px;
+        margin-top: 0;
+      }
 
-		.content-box h2 {
-			font-size: 1.5em;
-			padding: 10px;
-			margin: 0;
-			background-color: #00ccff;
-			color: #fff;
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			z-index: 1;
-		}
+      .bio {
+        background-color: #FFF;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+        animation: fadeInUp 1s ease;
+      }
 
-		.content-box .content-link {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			z-index: 2;
-		}
+      .bio h2 {
+        font-size: 24px;
+        margin-top: 0;
+      }
 
-		.content-box .content-link a {
-			display: block;
-			height: 100%;
-			width: 100%;
-			text-decoration: none;
-			color: #000;
-		}
+      .btn-container {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+      }
 
-		.content-box:hover {
-			box-shadow: 0 0 20px rgba(0,0,0,0.8);
-			transform: translateY(-5px);
-		}
+      .btn-container .btn {
+        display: inline-block;
+        background-color: #FFF;
+        border-radius: 10px;
+        padding: 10px 20px;
+        text-decoration: none;
+        color: #000;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+        animation: fadeInUp 1s ease;
+      }
 
-		.time {
-			background-color: #000;
-			color: #fff;
-			font-size: 1.2em;
-			text-align: center;
-			padding: 10px;
-			position: fixed;
-			bottom: 0;
-			left: 0;
-			width: 100%;
-			z-index: 3;
-		}
+      .btn-container .btn:hover {
+        background-color: #CCC;
+      }
 
-		.time span {
-			font-weight: bold;
-		}
-	</style>
-</head>
-<body>
-	<h1>炽阳001的博客</h1>
-	<a href="https://m.bilibili.com/space/404891612?from=search"><button>点击进入炽阳001B站主页</button></a>
-	<div class="content-wrapper">
-		<div class="content-box">
-			<h2>第一个博客</h2>
-			<div class="content-link">
-				<a href="#"></a>
-			</div>
-		</div>
-		
+      @media (max-width: 480px) {
+        .container {
+          padding: 20px;
+        }
+        .post h2 {
+          font-size: 20px;
+        }
+        .bio h2 {
+          font-size: 20px;
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="btn-container">
+        <h1>炽阳001的博客</h1>
+        <a href="https://m.bilibili.com/space/404891612?from=search" class="btn">点击进入炽阳001的 Bilibili 主页</a>
+      </div>
+      <div class="post">
+        <h2>欢迎！</h2>
+        <p>这是我的第一个GitHub上面的网站。创建时间为2023年5月3日。后续网站会不断更新，欢迎大家关注。</p>
+      </div>
+      <div class="post">
+        <h2>正在等待创作中。</h2>
+        <p>这是我的第二篇博客文章，内容正在努力创作中，敬请期待。</p>
+      </div>
+      <div class="post">
+        <h2>正在等待创作中。</h2>
+        <p>这是我的第三篇博客文章，内容正在努力创作中，敬请期待。</p>
+      </div>
+      <div class="bio">
+        <h2>个人简介</h2>
+        <p>大家好，我是炽阳001，在 B 站上有着自己的 UP 主账号，号码是 404891612。欢迎大家来关注我。我是一名喜欢编程的中学生，喜欢分享一些科技和鬼畜视频。希望我的博客文章可以对大家有所帮助，也希望大家可以在评论区中多多留言交流。</p>
+      </div>
+    </div>
+  </body>
+</html>
