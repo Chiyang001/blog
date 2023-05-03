@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <style>
       body {
-        background: linear-gradient(to bottom right, #F0F, #00F);
-        animation: gradient 10s ease infinite;
+        background: linear-gradient(to bottom right, #005C97, #363795, #005C97);
+        animation: gradient 15s ease infinite;
       }
 
       @keyframes gradient {
@@ -25,19 +25,21 @@
         max-width: 800px;
         margin: 0 auto;
         padding: 50px;
+        background-color: #FFF;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
       }
 
       .post {
-        background-color: #FFF;
-        border-radius: 10px;
         padding: 20px;
         margin-bottom: 30px;
-        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+        border-bottom: 1px solid #CCC;
         animation: fadeInUp 1s ease;
       }
 
       .post:last-child {
         margin-bottom: 0;
+        border-bottom: none;
       }
 
       .post h2 {
@@ -46,8 +48,6 @@
       }
 
       .bio {
-        background-color: #FFF;
-        border-radius: 10px;
         padding: 20px;
         box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
         animation: fadeInUp 1s ease;
@@ -61,22 +61,25 @@
       .btn-container {
         display: flex;
         align-items: center;
+        justify-content: space-between;
         margin-bottom: 30px;
       }
 
       .btn-container .btn {
         display: inline-block;
         background-color: #FFF;
+        border: 2px solid #005C97;
         border-radius: 10px;
         padding: 10px 20px;
         text-decoration: none;
-        color: #000;
+        color: #005C97;
         box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
         animation: fadeInUp 1s ease;
       }
 
       .btn-container .btn:hover {
-        background-color: #CCC;
+        background-color: #005C97;
+        color: #FFF;
       }
 
       @media (max-width: 480px) {
@@ -110,21 +113,11 @@
         <a href="https://m.bilibili.com/space/404891612?from=search" class="btn">点击进入炽阳001的 Bilibili 主页</a>
       </div>
       <div class="post">
-        <h2>欢迎！</h2>
-        <p>这是我的第一个GitHub上面的网站。创建时间为2023年5月3日。后续网站会不断更新，欢迎大家关注。</p>
-      </div>
-      <div class="post">
-        <h2>正在等待创作中。</h2>
-        <p>这是我的第二篇博客文章，内容正在努力创作中，敬请期待。</p>
-      </div>
-      <div class="post">
-        <h2>正在等待创作中。</h2>
-        <p>这是我的第三篇博客文章，内容正在努力创作中，敬请期待。</p>
-      </div>
-      <div class="bio">
-        <h2>个人简介</h2>
-        <p>大家好，我是炽阳001，在 B 站上有着自己的 UP 主账号，号码是 404891612。欢迎大家来关注我。我是一名喜欢编程的中学生，喜欢分享一些科技和鬼畜视频。希望我的博客文章可以对大家有所帮助，也希望大家可以在评论区中多多留言交流。</p>
-      </div>
-    </div>
-  </body>
-</html>
+  <h2>欢迎！</h2>
+  <p>这是我的第一个GitHub上面的网站。创建时间为2023年5月3日。后续网站会不断更新，欢迎大家关注。</p>
+</div>
+<div class="post">
+  <h2>示例文章</h2>
+  <p>这是一篇示例文章，用于演示如何发布博客文章。您可以在这里添加您自己的文章内容。建议使用 Markdown 格式编写文章，这样可以更方便地添加标题、段落、链接等元素。如果您对 Markdown 不熟悉，可以先学习一下再尝试发布文章。</p>
+</div>
+
