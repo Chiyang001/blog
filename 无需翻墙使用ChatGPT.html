@@ -96,7 +96,7 @@
         const name = $("input[name='name']").val();
         const comment = $("textarea[name='comment']").val();
         // 构造post请求发送到服务器
-        $.post("https://example.com/comments", {name: name, comment: comment}, function(data) {
+        $.post("chiyang001.github.io/blog", {name: name, comment: comment}, function(data) {
           // 如果保存成功，则在评论列表中添加新的评论
           if (data.status === "success") {
             const commentList = $("#comment-list");
