@@ -46,7 +46,7 @@
 
 <p>【5月7日更新内容】</p>
 <p>1.新增打赏功能，白嫖的网站走不远，一两分钱也是鼓励</p>
-<p>2.上架了多种玩机APP</p>
+<p>2.限时免费体验无限次AI绘画网站</p>
 <p>3.免费ChatGPT专栏上线，不用翻墙也能玩转ChatGPT</p>
 		<button onclick="document.getElementById('popup').style.display='none'">我知道了</button>
 	</div>
@@ -180,6 +180,92 @@
  
 <div class="btn-container">
 <div class="post">
+
+
+<h2>限时体验无限次AI绘画</h2>
+
+<p>剩余体验时间：</p>
+<div>
+  <span id="days"></span>天
+  <span id="hours"></span>小时
+  <span id="minutes"></span>分钟
+  <span id="seconds"></span>秒
+</div>
+
+<script>
+  // 设置结束日期时间戳（7 天以后）
+  var endDate = new Date().getTime() + (7 * 24 * 60 * 60 * 1000);
+
+  // 每一秒更新倒计时
+  var countdownInterval = setInterval(function () {
+    // 获取当前日期时间戳
+    var now = new Date().getTime();
+
+    // 计算距离结束日期时间戳还有多少毫秒
+    var distance = endDate - now;
+
+    // 计算剩余天数、小时数、分钟数和秒数
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // 更新页面中相应元素的文本
+    document.getElementById("days").innerHTML = days;
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
+
+    // 如果倒计时结束，则清除计时器
+    if (distance < 0) {
+      clearInterval(countdownInterval);
+    }
+  }, 1000);
+</script>
+
+
+
+  <style>
+      .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+      
+      .btn:hover {
+        background-color: #3e8e41;
+      }
+      
+      .btn:active {
+        background-color: #1e5228;
+      }
+      
+      .btn.white {
+        background-color: #fff;
+        color: #4CAF50;
+        border: 2px solid #4CAF50;
+      }
+      
+      .btn.white:hover {
+        background-color: #4CAF50;
+        color: #fff;
+      }
+      
+      .btn.white:active {
+        background-color: #1e5228;
+        color: #fff;
+      }
+    </style>
+<a href="https://rightbrain.art/" target="_blank" rel="noopener noreferrer">
+  <button class="btn">👉立即体验</button>
+</a>
+
+
 
 <h2>【5月7日更新】不用梯子免费使用ChatGPT教程</h2>
 <p>想要体验ChatGPT，但是不知道应该怎么使用，还想白嫖，自己又没有梯子怎么办？看看这篇文章，也许对你有所帮助。</p>
