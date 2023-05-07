@@ -4,20 +4,26 @@
     <meta charset="UTF-8">
     <title>我的专栏</title>
     <style>
-      /* 背景动态效果 */
+      /* 渐变色背景 */
       body {
-        background-color: #1b1b1b;
-        background-image: url('https://picsum.photos/id/1053/1920/1080');
-        background-size: cover;
-        background-position: center;
-        animation: bg-fade-in 5s forwards;
+        background: linear-gradient(-45deg,#ff4d4d,#00e6e6,#3385ff);
+        background-size: 400% 400%;
+        animation: bg-slide 20s ease infinite;
       }
-      @keyframes bg-fade-in {
-        from {
-          opacity: 0;
+      
+      /* 动态效果 */
+      @keyframes bg-slide {
+        0% {
+          background-position: 0% 50%;
+          background-size: 100% 100%;
         }
-        to {
-          opacity: 1;
+        50% {
+          background-position: 100% 50%;
+          background-size: 150% 150%;
+        }
+        100% {
+          background-position: 0% 50%;
+          background-size: 100% 100%;
         }
       }
     </style>
