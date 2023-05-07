@@ -4,12 +4,24 @@
   <meta charset="UTF-8">
   <title>你好哥</title>
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to bottom, #FF9966, #FFCC66); /* 定义渐变背景色 */
-      background-size: cover; /* 让背景图片充满整个屏幕 */
-    }
+    
+      body {
+        background: linear-gradient(45deg, #EE82EE, #4682B4, #FFA500);
+        background-size: 400% 400%;
+        animation: gradient 10s ease infinite;
+      }
+
+      @keyframes gradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
 
     .container {
       margin: 50px auto;
