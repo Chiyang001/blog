@@ -1,119 +1,134 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>我的专栏</title>
-    <style>
-      /* 渐变色背景 */
-      body{
-        background-color:#000000;
-      }
-      #bg{
-        background: linear-gradient(-45deg, #ff4d4d, #00e6e6, #3385ff);
-        background-size: 400% 400%;
-        animation: bg-slide 20s ease infinite;
-        width:100%; 
-        height:100%; 
-        position:fixed; 
-        top:0; 
-        left:0;
-        z-index:-1;
-        opacity:0.9;
-      }
-        
-      /* 白色容器 */
-      .container {
-        position:relative;
-        margin: 0 auto;
-        padding: 30px;
-        background-color: #fff;
-        box-shadow: 0 0 10px rgba(0,0,0,0.3);
-        max-width:800px;
-        width:90%;
-        display:flex;
-        flex-direction:column;
-        justify-content:center;
-        align-items:center;
-        text-align:center;
-      }
-      /* 动态效果 */
-      @keyframes bg-slide {
-        0% {
-          background-position: 0% 50%;
-          background-size: 100% 100%;
-        }
-        50% {
-          background-position: 100% 50%;
-          background-size: 150% 150%;
-        }
-        100% {
-          background-position: 0% 50%;
-          background-size: 100% 100%;
-        }
-      }
-      /* 评论样式 */
-      .comment-box {
-        margin-top: 30px;
-        width: 100%;
-        max-width: 600px;
-      }
-      .comment {
-        margin-bottom: 20px;
-        padding: 10px;
-        background-color: #f5f5f5;
-        text-align: left;
-      }
-      .nickname {
-        font-weight: bold;
-        margin-right: 10px;
-        color: #ff4d4d;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="bg"></div>
-    <div class="container">
-      <h1>我的专栏</h1>
+<head>
+  <meta charset="utf-8">
+  <title>你好哥</title>
+  <style>
+    /* 渐变背景色 */
+    body {
+      background: linear-gradient(to bottom, #FFC371 0%, #FF5F6D 100%);
+    }
 
-      <h2>你好吗</h2>
-      <p>你好</p>
+    /* 文字容器样式 */
+    #container {
+      width: 80%;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      text-align: center;
+    }
 
-      <h2>一篇新文章</h2>
-      <p>这是我写的一篇新文章</p>
+    /* 评论区样式 */
+    #comments {
+      width: 80%;
+      margin: 20px auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+    }
 
-      <h3>评论区</h3>
-      
-      <!-- 评论表单 -->
-      <form id="comment-form" onsubmit="saveComment(event)">
-        <label>昵称:</label>
-        <input type="text" id="nickname" name="nickname" value="用户" readonly>
-        <br>
-        <label>评论:</label>
-        <textarea id="comment" name="comment"></textarea>
-        <br>
-        <button type="submit">提交</button>
-      </form>
-      
-      <!-- 评论列表 -->
-      <div class="comment-box">
-        <div id="comments"></div>
-      </div>
-      
-    </div>
-    <script>
-      // 保存评论
-      function saveComment(event) {
-        event.preventDefault();
-        let nickname = document.getElementById('nickname').value;
-        let comment = document.getElementById('comment').value;
-        let commentBox = document.getElementById('comments');
-        let newComment = document.createElement('div');
-        newComment.classList.add('comment');
-        newComment.innerHTML = '<span class="nickname">' + nickname + ':</span>' + comment;
-        commentBox.appendChild(newComment);
-        //清空输入框
-        document.getElementById('comment-form').reset();
-      }
-    </script>
-  </body>
+    /* 输入框样式 */
+    input {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    /* 按钮样式 */
+    button {
+      padding: 10px 20px;
+      background: #FF5F6D;
+      color: #fff;
+      border-radius: 5px;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    /* 评论列表样式 */
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+      padding: 10px;
+      background: #f5f5f5;
+      border-radius: 5px;
+    }
+
+    span {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 文字容器 -->
+  <div id="container">
+    <h1>你好哥</h1>
+    <p>你好</p>
+  </div>
+
+  <!-- 评论区 -->
+  <div id="comments">
+    <h2>评论</h2>
+    <input type="text" placeholder="请输入您的昵称">
+    <textarea placeholder="请输入您的评论"></textarea>
+    <button id="submit">提交</button>
+    <ul id="comment-list">
+    </ul>
+  </div>
+
+  <script>
+    // 获取提交按钮和评论列表
+    const submitBtn = document.querySelector("#submit");
+    const commentList = document.querySelector("#comment-list");
+
+    // 监听点击事件
+    submitBtn.addEventListener("click", function() {
+
+      // 获取昵称和评论字符串
+      const nameInput = document.querySelector("input");
+      const commentInput = document.querySelector("textarea");
+
+      const name = nameInput.value;
+      const comment = commentInput.value;
+
+      // 根据获取评论时间来作为评论id，避免id重复
+      const id = new Date().getTime();
+
+      // 创建评论列表元素
+      const li = document.createElement("li");
+
+      // 创建评论者名称元素
+      const nameSpan = document.createElement("span");
+      nameSpan.innerHTML = name + ": ";
+
+      // 创建评论内容元素
+      const commentSpan = document.createElement("span");
+      commentSpan.innerHTML = comment;
+
+      // 将评论者名称和评论内容添加到列表元素中
+      li.appendChild(nameSpan);
+      li.appendChild(commentSpan);
+
+      // 将评论列表元素添加到评论列表中
+      commentList.appendChild(li);
+
+      // 重置输入框和评论框
+      nameInput.value = "";
+      commentInput.value = "";
+    });
+  </script>
+</body>
 </html>
