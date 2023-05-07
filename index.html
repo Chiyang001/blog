@@ -184,43 +184,40 @@
 
 <h2>限时体验无限次AI绘画</h2>
 
+
 <p>剩余体验时间：</p>
-<div>
-  <span id="days"></span>天
-  <span id="hours"></span>小时
-  <span id="minutes"></span>分钟
-  <span id="seconds"></span>秒
-</div>
+
+<div id="countdown" style="font-size: 24px"></div>
 
 <script>
-  // 设置结束日期时间戳（7 天以后）
-  var endDate = new Date().getTime() + (7 * 24 * 60 * 60 * 1000);
+// 设置截止时间为北京时间2023年5月14日8点整
+var deadline = new Date("May 14, 2023 08:00:00 GMT+0800");
 
-  // 每一秒更新倒计时
-  var countdownInterval = setInterval(function () {
-    // 获取当前日期时间戳
-    var now = new Date().getTime();
+// 每秒更新一次倒计时
+var timer = setInterval(function() {
 
-    // 计算距离结束日期时间戳还有多少毫秒
-    var distance = endDate - now;
+// 获取当前时间
+var now = new Date().getTime();
 
-    // 计算剩余天数、小时数、分钟数和秒数
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+// 计算还剩多少毫秒
+var distance = deadline - now;
 
-    // 更新页面中相应元素的文本
-    document.getElementById("days").innerHTML = days;
-    document.getElementById("hours").innerHTML = hours;
-    document.getElementById("minutes").innerHTML = minutes;
-    document.getElementById("seconds").innerHTML = seconds;
+// 将毫秒转换成天、小时、分钟和秒
+var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    // 如果倒计时结束，则清除计时器
-    if (distance < 0) {
-      clearInterval(countdownInterval);
-    }
-  }, 1000);
+// 格式化并输出倒计时
+document.getElementById("countdown").innerHTML = days + "天 " + hours + "小时 "
+
+minutes + "分 " + seconds + "秒 ";
+// 如果倒计时结束，则清除定时器
+if (distance < 0) {
+clearInterval(timer);
+document.getElementById("countdown").innerHTML= "已截止！";
+}
+}, 1000); // 每秒更新一次倒计时
 </script>
 
 
