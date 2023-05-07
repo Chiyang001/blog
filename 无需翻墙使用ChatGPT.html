@@ -7,7 +7,7 @@
     
       body {
         background: linear-gradient(45deg, #EE82EE, #4682B4, #FFA500);
-        background-size: 400% 400%;
+        background-size: 800% 800%;
         animation: gradient 10s ease infinite;
       }
 
@@ -49,18 +49,6 @@
     <h1>你好哥</h1>
     <p>你好！</p>
   </div>
-  <script>
-    // 定义渐变色数组
-    var colors = ['#FF9966', '#FFAA66', '#FFBB66', '#FFCC66', '#FFDD66', '#FFEE66'];
 
-    // 定义渐变背景色变化函数
-    function changeBackground() {
-      var index = Math.floor(Math.random() * colors.length);
-      document.body.style.background = 'linear-gradient(to bottom, ' + colors[index] + ', ' + colors[index + 1] + ')';
-    }
-
-    // 每1秒执行一次背景色变化函数
-    setInterval(changeBackground, 1000);
-  </script>
 </body>
 </html>
