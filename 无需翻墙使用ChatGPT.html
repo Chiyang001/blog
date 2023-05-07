@@ -6,9 +6,20 @@
     <style>
       /* 渐变色背景 */
       body {
-        background: linear-gradient(-45deg,#ff4d4d,#00e6e6,#3385ff);
+        background-color: #0c0c0c;
+        background-image: linear-gradient(-45deg, #ff4d4d, #00e6e6, #3385ff);
         background-size: 400% 400%;
         animation: bg-slide 20s ease infinite;
+      }
+      
+      /* 白色容器 */
+      .container {
+        width: 80%;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 30px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
       }
       
       /* 动态效果 */
@@ -29,24 +40,25 @@
     </style>
   </head>
   <body>
-    <h1>我的专栏</h1>
-    
-    <h2>你好吗</h2>
-    <p>你好</p>
-    
-    <h2>一篇新文章</h2>
-    <p>这是我写的一篇新文章</p>
-    
-    <h3>评论区</h3>
-    <form>
-      <label>昵称:</label>
-      <input type="text" name="nickname" value="用户" readonly>
-      <br>
-      <label>评论:</label>
-      <textarea name="comment"></textarea>
-      <br>
-      <button type="submit">提交</button>
-    </form>
-    
+    <div class="container">
+      <h1>我的专栏</h1>
+
+      <h2>你好吗</h2>
+      <p>你好</p>
+
+      <h2>一篇新文章</h2>
+      <p>这是我写的一篇新文章</p>
+
+      <h3>评论区</h3>
+      <form>
+        <label>昵称:</label>
+        <input type="text" name="nickname" value="用户" readonly>
+        <br>
+        <label>评论:</label>
+        <textarea name="comment"></textarea>
+        <br>
+        <button type="submit">提交</button>
+      </form>
+    </div>
   </body>
 </html>
