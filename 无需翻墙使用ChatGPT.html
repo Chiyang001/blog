@@ -5,23 +5,37 @@
     <title>我的专栏</title>
     <style>
       /* 渐变色背景 */
-      body {
-        background-color: #0c0c0c;
-        background-image: linear-gradient(-45deg, #ff4d4d, #00e6e6, #3385ff);
+      body{
+        background-color:#000000;
+      }
+      #bg{
+        background: linear-gradient(-45deg, #ff4d4d, #00e6e6, #3385ff);
         background-size: 400% 400%;
         animation: bg-slide 20s ease infinite;
+        width:100%; 
+        height:100%; 
+        position:fixed; 
+        top:0; 
+        left:0;
+        z-index:-1;
+        opacity:0.9;
       }
-      
+        
       /* 白色容器 */
       .container {
-        width: 80%;
-        max-width: 800px;
+        position:relative;
         margin: 0 auto;
         padding: 30px;
         background-color: #fff;
         box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        max-width:800px;
+        width:90%;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        text-align:center;
       }
-      
       /* 动态效果 */
       @keyframes bg-slide {
         0% {
@@ -37,9 +51,27 @@
           background-size: 100% 100%;
         }
       }
+      /* 评论样式 */
+      .comment-box {
+        margin-top: 30px;
+        width: 100%;
+        max-width: 600px;
+      }
+      .comment {
+        margin-bottom: 20px;
+        padding: 10px;
+        background-color: #f5f5f5;
+        text-align: left;
+      }
+      .nickname {
+        font-weight: bold;
+        margin-right: 10px;
+        color: #ff4d4d;
+      }
     </style>
   </head>
   <body>
+    <div id="bg"></div>
     <div class="container">
       <h1>我的专栏</h1>
 
@@ -50,15 +82,38 @@
       <p>这是我写的一篇新文章</p>
 
       <h3>评论区</h3>
-      <form>
+      
+      <!-- 评论表单 -->
+      <form id="comment-form" onsubmit="saveComment(event)">
         <label>昵称:</label>
-        <input type="text" name="nickname" value="用户" readonly>
+        <input type="text" id="nickname" name="nickname" value="用户" readonly>
         <br>
         <label>评论:</label>
-        <textarea name="comment"></textarea>
+        <textarea id="comment" name="comment"></textarea>
         <br>
         <button type="submit">提交</button>
       </form>
+      
+      <!-- 评论列表 -->
+      <div class="comment-box">
+        <div id="comments"></div>
+      </div>
+      
     </div>
+    <script>
+      // 保存评论
+      function saveComment(event) {
+        event.preventDefault();
+        let nickname = document.getElementById('nickname').value;
+        let comment = document.getElementById('comment').value;
+        let commentBox = document.getElementById('comments');
+        let newComment = document.createElement('div');
+        newComment.classList.add('comment');
+        newComment.innerHTML = '<span class="nickname">' + nickname + ':</span>' + comment;
+        commentBox.appendChild(newComment);
+        //清空输入框
+        document.getElementById('comment-form').reset();
+      }
+    </script>
   </body>
 </html>
