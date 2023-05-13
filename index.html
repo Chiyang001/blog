@@ -30,24 +30,11 @@
 <body onload="document.getElementById('popup').style.display='block'">
 	<div id="popup" class="popup">
 		<h2>更新公告</h2>
-		<p>尊敬的用户，您好：</p>
 
-<p>为了遵守国家法律法规，维护网络安全和社会秩序，本网站将于2023年5月7日起下架所有涉及色情APP和VPN翻墙软件的内容。请您及时删除或转移相关内容，以免造成不必要的麻烦。</p>
 
-<p>根据《中华人民共和国计算机信息网络国际联网管理暂行规定》第六条、第十四条之规定，任何单位和个人不得自行建立或者使用其他信道进行国际联网。如违反上述规定，公安机关会责令停止联网，给予警告，可以并处15000元以下的罚款；有违法所得的，没收违法所得。</p>
+<p>【5月13日更新内容】</p>
+<p>1.新增ChatGPT保持聊天插件，避免一切OpenAI报错</p>
 
-<p>同时，根据《中华人民共和国刑法》第三百六十三条之规定，制作、复制、出版、贩卖、传播淫秽物品，情节严重的，处三年以下有期徒刑、拘役或者管制，并处罚金；情节特别严重的，处三年以上十年以下有期徒刑，并处罚金。</p>
-
-<p>本网站将严格遵守国家法律法规，对违法违规内容进行清理整顿。同时，我们也恳请广大用户自觉遵守法律法规，共同营造一个健康、文明、和谐的网络环境。</p>
-
-<p>感谢您的理解和支持！</p>
-
-<p>炽阳001 2023年5月7日</p>
-
-<p>【5月7日更新内容】</p>
-<p>1.新增打赏功能，白嫖的网站走不远，一两分钱也是鼓励</p>
-<p>2.限时免费体验无限次AI绘画网站</p>
-<p>3.免费ChatGPT专栏上线，不用翻墙也能玩转ChatGPT</p>
 		<button onclick="document.getElementById('popup').style.display='none'">我知道了</button>
 	</div>
 </body>
@@ -73,6 +60,10 @@
           background-position: 0% 50%;
         }
       }
+   
+
+   
+   
    
       .container {
         max-width: 800px;
@@ -165,9 +156,10 @@
       <div class="btn-container">
 
         <h1 style="white-space:nowrap">炽阳001的博客</h1>
-
-        <a href="https://m.bilibili.com/space/404891612?from=search" class="btn">Bilibili主页</a>
+<a href="https://m.bilibili.com/space/404891612?from=search" class="btn" style="margin-right: 5px;">Bilibili主页</a>
 <a href="https://pan.quark.cn/s/2d9beba75750" class="btn">🎁打赏作者</a>
+<a href="https://github.com/Chiyang001/blog" class="btn">GitHub主页</a>
+
       </div>
 
 <div class="post">
@@ -182,46 +174,8 @@
 <div class="post">
 
 
-<h2>限时体验无限次AI绘画</h2>
-
-
-<p>剩余体验时间：</p>
-
-<div id="countdown" style="font-size: 24px"></div>
-
-<script>
-// 设置截止时间为北京时间2023年5月14日8点整
-var deadline = new Date("May 14, 2023 08:00:00 GMT+0800");
-
-// 每秒更新一次倒计时
-var timer = setInterval(function() {
-
-// 获取当前时间
-var now = new Date().getTime();
-
-// 计算还剩多少毫秒
-var distance = deadline - now;
-
-// 将毫秒转换成天、小时、分钟和秒
-var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-// 格式化并输出倒计时
-document.getElementById("countdown").innerHTML = days + "天 " + hours + "小时 "
-
-minutes + "分 " + seconds + "秒 ";
-// 如果倒计时结束，则清除定时器
-if (distance < 0) {
-clearInterval(timer);
-document.getElementById("countdown").innerHTML= "已截止！";
-}
-}, 1000); // 每秒更新一次倒计时
-</script>
-
-
-
+<h2>【5月13日更新】ChatGPT保持聊天插件分享</h2>
+<p>ChatGPT老是报错怎么办？不妨看看这一款插件，可以避免ChatGPT一切报错，并支持附加功能，让聊天更流畅！亲测可用！</p>
   <style>
       .btn {
         display: inline-block;
@@ -258,9 +212,10 @@ document.getElementById("countdown").innerHTML= "已截止！";
         color: #fff;
       }
     </style>
-<a href="https://rightbrain.art/" target="_blank" rel="noopener noreferrer">
-  <button class="btn">👉立即体验</button>
+<a href="https://github.com/xcanwin/KeepChatGPT/" target="_blank" rel="noopener noreferrer">
+  <button class="btn">了解更多</button>
 </a>
+
 
 
 
