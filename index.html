@@ -4,41 +4,116 @@
  <title>炽阳001的博客</title>
     <meta charset="UTF-8">
 
+<!-- 新页面容器 -->
+<div class="welcome-container">
+  <!-- 背景 -->
+  <div class="background"></div>
+  <!-- 内容 -->
+  <div class="content">
+    <!-- 诗句 -->
+    <h1 class="poem">远离尘嚣&nbsp;&nbsp;入奇境，<br>
+      感受幻梦&nbsp;&nbsp;间细微。<br>
+      花开纷飞&nbsp;&nbsp;舞翩翩，<br>
+      星空闪耀&nbsp;&nbsp;情无边。</h1>
+  </div>
+</div>
+
+<style>
+  body {
+    overflow: hidden;
+  }
+
+  .welcome-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 9999;
+    opacity: 1;
+    animation: fade-out-container 2s 4s forwards;
+  }
+
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(ellipse at center, #6727c5 0%, #000000 100%);
+  }
+  
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 1;
+    animation: fade-out-content 2s 4s forwards;
+  }
+
+  .poem {
+    font-size: 36px;
+    color: white;
+    text-align: center;
+    opacity: 0;
+    animation: enlarge 3s ease-in-out forwards;
+  }
+
+  @keyframes fade-out-container {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes fade-out-content {
+    0%, 50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes enlarge {
+    0% {
+      transform: scale(1);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.5);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+</style>
+
+<script>
+  setTimeout(function() {
+    var container = document.querySelector(".welcome-container");
+    if (container) {
+      container.remove();
+      document.body.style.overflow = "auto";
+    }
+  }, 6000);
+</script>
 
 
 
-	<style type="text/css">
-		.popup {
-			position: fixed;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			background-color: white;
-			padding: 20px;
-			border-radius: 10px;
-			box-shadow: 0px 0px 10px grey;
-			z-index: 1;
-		}
-		.popup button {
-			background-color: white;
-			border-radius: 5px;
-			padding: 5px;
-			margin-top: 10px;
-			float: right;
-		}
-	</style>
-<body onload="document.getElementById('popup').style.display='block'">
-	<div id="popup" class="popup">
-		<h2>更新公告</h2>
 
-
-<p>【7月2日更新内容】</p>
-<p>1.优化UI和布局界面</p>
-
-		<button onclick="document.getElementById('popup').style.display='none'">我知道了</button>
-	</div>
-</body>
-
+	
 
 
 
@@ -212,11 +287,11 @@
     justify-content: center;
     width: 100%;
     height: 300px;
-    background-image: linear-gradient(135deg, #f76b1c 0%, #f98461 50%, #f76b1c 100%);
+    background-color: #111111;
     /* 添加圆角 */
     border-radius: 10px;
-    /* 使用动画实现不断变化的渐变背景 */
-    animation: gradient-change 5s infinite;
+    /* 使用动画实现不断变化的彩虹渐变背景 */
+    animation: color-change 8s infinite;
   }
 
   .gradient-title {
@@ -243,19 +318,24 @@
     color: white;
   }
 
-  /* 定义渐变背景颜色变化的动画 */
-  @keyframes gradient-change {
+  /* 定义颜色变化的动画 */
+  @keyframes color-change {
     0% {
-      background-image: linear-gradient(135deg, #f76b1c 0%, #f98461 50%, #f76b1c 100%);
+      background-color: #111111;
+      box-shadow: 0 0 10px white;
     }
     50% {
-      background-image: linear-gradient(135deg, #f98461 0%, #f76b1c 50%, #f98461 100%);
+      background-color: #005eff;
+      box-shadow: 0 0 20px #00b3ff, 0 0 40px #00b3ff, 0 0 80px #00b3ff;
     }
     100% {
-      background-image: linear-gradient(135deg, #f76b1c 0%, #f98461 50%, #f76b1c 100%);
+      background-color: #111111;
+      box-shadow: 0 0 10px white;
     }
   }
 </style>
+
+
 
 <!--网站ChatGPT试用模块结束-->
 	       
@@ -481,6 +561,105 @@
 <a href="https://wwp.lanzoup.com/i34S00usj6xc" target="_blank" rel="noopener noreferrer">
   <button class="btn">下载代码运行APP</button>
 </a>
+
+<!-- 底栏设置 -->
+<style>
+    /* 底栏样式 */
+    .footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      background-color: transparent;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .footer .copyright {
+     text-align: center;
+    }
+
+    .footer .announcement {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .footer .announcement-button {
+      background-color: transparent;
+      border: none;
+      color: #666;
+      font-size: 14px;
+      cursor: pointer;
+      margin-bottom: 8px;
+    }
+
+    /* 弹窗样式 */
+    .modal {
+      display: none;
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+
+    .modal-content {
+      background-color: white;
+      margin: 15% auto;
+      padding: 20px;
+      width: 50%;
+      text-align: center;
+      position: relative;
+    }
+
+    .modal-content .close-button {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background-color: #f76b1c;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+  
+<!-- 底栏 -->
+  <footer class="footer">
+    <div class="announcement">
+      <button class="announcement-button" onclick="openModal()">系统公告</button>
+      <div>Made BY GPT-4</div>
+      <div>©炽阳 2023</div>
+    </div>
+  </footer>
+
+  <!-- 弹窗 -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <h1>【7月2日更新】优化了UI设计和网页排版，新增ChatGPT聊天窗口，欢迎体验！</h1>
+      <button class="close-button" onclick="closeModal()">好的</button>
+    </div>
+  </div>
+
+  <script>
+    // 打开弹窗
+    function openModal() {
+      document.getElementById('modal').style.display = 'block';
+    }
+
+    // 关闭弹窗
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+  </script>
+<!-- 底栏结束 -->
+
+
+
 </div>
 
 
