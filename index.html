@@ -197,6 +197,24 @@
 <!--网站ChatGPT试用模块开始-->
 <!-- 渐变色容器 -->
 <div class="gradient-container">
+.gradient-container {
+  /* 添加圆角 */
+  border-radius: 10px;
+  /* 使用动画实现不断变化的渐变背景 */
+  animation: gradient-change 5s infinite;
+}
+
+@keyframes gradient-change {
+  0% {
+    background-image: linear-gradient(135deg, #f76b1c 0%, #f98461 50%, #f76b1c 100%);
+  }
+  50% {
+    background-image: linear-gradient(135deg, #f98461 0%, #f76b1c 50%, #f98461 100%);
+  }
+  100% {
+    background-image: linear-gradient(135deg, #f76b1c 0%, #f98461 50%, #f76b1c 100%);
+  }
+}
   <!-- 标题 -->
   <h1 class="gradient-title">完全免费ChatGPT网站收录</h1>
   <!-- 按钮 -->
