@@ -10,11 +10,10 @@
   <div class="background"></div>
   <!-- 内容 -->
   <div class="content">
-    <!-- 诗句 -->
-    <h1 class="poem">远离尘嚣&nbsp;&nbsp;入奇境，<br>
-      感受幻梦&nbsp;&nbsp;间细微。<br>
-      花开纷飞&nbsp;&nbsp;舞翩翩，<br>
-      星空闪耀&nbsp;&nbsp;情无边。</h1>
+    <!-- 标题 -->
+    <h1 class="title">欢迎来到炽阳001的博客</h1>
+    <!-- 副标题 -->
+    <h2 class="subtitle">探索无限可能，创新无止境，带你发现新世界</h2>
   </div>
 </div>
 
@@ -44,11 +43,12 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: radial-gradient(ellipse at center, #6727c5 0%, #000000 100%);
+    background-image: linear-gradient(135deg, #23bdb8 0%, #43e97b 100%);
   }
-  
+
   .content {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -58,12 +58,22 @@
     animation: fade-out-content 2s 4s forwards;
   }
 
-  .poem {
-    font-size: 36px;
+  .title {
+    font-size: 48px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fade-in 2s ease-in-out 1s forwards;
+  }
+
+  .subtitle {
+    font-size: 24px;
     color: white;
     text-align: center;
     opacity: 0;
-    animation: enlarge 3s ease-in-out forwards;
+    animation: fade-in 2s ease-in-out 2s forwards;
   }
 
   @keyframes fade-out-container {
@@ -84,17 +94,11 @@
     }
   }
 
-  @keyframes enlarge {
+  @keyframes fade-in {
     0% {
-      transform: scale(1);
       opacity: 0;
     }
-    50% {
-      transform: scale(1.5);
-      opacity: 1;
-    }
     100% {
-      transform: scale(1);
       opacity: 1;
     }
   }
@@ -109,9 +113,7 @@
     }
   }, 6000);
 </script>
-
-
-
+<!-- 新页面容器 结束-->
 
 	
 
