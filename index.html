@@ -13,7 +13,7 @@
     <!-- 标题 -->
     <h1 class="title">欢迎来到炽阳001的博客</h1>
     <!-- 副标题 -->
-    <h2 class="subtitle">探索无限可能，创新无止境，带你发现新世界</h2>
+    <h2 class="subtitle">每点鼓励，就是我前进的动力🤗</h2>
   </div>
 </div>
 
@@ -631,35 +631,228 @@
   </style>
   
 <!-- 底栏 -->
-  <footer class="footer">
-    <div class="announcement">
-      <button class="announcement-button" onclick="openModal()">系统公告</button>
-      <div>Made BY GPT-4</div>
-      <div>©炽阳 2023</div>
-    </div>
-  </footer>
+<!-- 底栏 -->
+<footer class="footer">
+  <div class="announcement">
+    <button class="announcement-button" onclick="openModal()">系统公告</button>
+    <button class="announcement-button" onclick="openDeveloperOptions()">开发者选项</button>
+    <div>Made BY GPT-4</div>
+    <div>QQ交流联系群：703079600</div>
+    <div>All CopyRight炽阳 2023</div>
+  </div>
+</footer>
 
-  <!-- 弹窗 -->
-  <div class="modal" id="modal">
-    <div class="modal-content">
-      <h1>【7月2日更新】优化了UI设计和网页排版，新增ChatGPT聊天窗口，欢迎体验！</h1>
-      <button class="close-button" onclick="closeModal()">好的</button>
+<!-- 弹窗 -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h1>系统公告</h1>
+      <button class="close-button" onclick="closeModal()">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="announcement-list">
+        <div class="announcement-item">
+          <h2>【7月9日更新】</h2>
+          <p>• 优化了系统公告窗口和底栏样式。</p>
+          <p>• 新增了一点激励短语。</p>
+          <p>• 底栏简单加上了一点QQ群号。</p>
+          <p>• 新增的开发管理员模式。</p>
+          <h2>【7月2日更新】</h2>
+          <p>•优化了UI设计和网页排版，新增ChatGPT聊天窗口，欢迎体验！</p>
+        </div>
+        <!-- 在这里添加更多的更新记录 -->
+      </div>
     </div>
   </div>
+</div>
 
-  <script>
-    // 打开弹窗
-    function openModal() {
-      document.getElementById('modal').style.display = 'block';
+<!-- 开发者选项弹窗 -->
+<div class="developer-options-modal" id="developerOptionsModal">
+  <div class="developer-options-modal-content">
+    <div class="developer-options-header">
+      <h1>开发者选项</h1>
+      <button class="close-button" onclick="closeDeveloperOptionsModal()">×</button>
+    </div>
+    <div class="developer-options-body">
+      <label for="password">密码:</label>
+      <input type="password" id="password" name="password">
+      <button onclick="checkPassword()">确认</button>
+    </div>
+    <div class="developer-options-footer">
+      <pre id="sourceCode" class="language-html"></pre>
+    </div>
+  </div>
+</div>
+
+<style>
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .modal-content {
+    background-color: #f1f1f1;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-height: 80%;
+    overflow-y: auto;
+  }
+
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .modal-header h1 {
+    margin: 0;
+    font-size: 24px;
+  }
+
+  .modal-body {
+    padding: 15px;
+  }
+
+  .close-button {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .announcement-list {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .announcement-item h2 {
+    margin: 0;
+    font-size: 18px;
+  }
+
+  .announcement-item p {
+    margin: 0;
+  }
+
+  /* 开发者选项弹窗样式 */
+  .developer-options-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .developer-options-modal-content {
+    background-color: #333;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-height: 80%;
+    overflow-y: auto;
+    color: #fff;
+  }
+
+  .developer-options-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .developer-options-header h1 {
+    margin: 0;
+    font-size: 24px;
+  }
+
+  .developer-options-body {
+    padding: 15px;
+  }
+
+  .developer-options-body label {
+    color: #fff;
+  }
+
+  .developer-options-footer {
+    padding: 15px;
+    background-color: #222;
+    margin-top: 15px;
+    font-size: 14px;
+    font-family: Consolas, monospace;
+    overflow: auto;
+  }
+
+  /* 高亮显示代码 */
+  .keyword {
+    color: #a6e22e;
+  }
+
+  .string {
+    color: #e6db74;
+  }
+
+  .comment {
+    color: #75715e;
+  }
+</style>
+
+<script>
+  // 打开弹窗
+  function openModal() {
+    document.getElementById('modal').style.display = 'block';
+  }
+
+  // 关闭弹窗
+  function closeModal() {
+    document.getElementById('modal').style.display = 'none';
+  }
+
+  // 打开开发者选项弹窗
+  function openDeveloperOptions() {
+    document.getElementById('developerOptionsModal').style.display = 'block';
+  }
+
+  // 关闭开发者选项弹窗
+  function closeDeveloperOptionsModal() {
+    document.getElementById('developerOptionsModal').style.display = 'none';
+    document.getElementById('password').value = ''; // 清空密码输入框
+  }
+
+  // 检查密码并显示源代码
+  function checkPassword() {
+    var passwordInput = document.getElementById('password').value;
+    var encryptedPassword = btoa(passwordInput); 
+
+    if (encryptedPassword === 'eWpsNzgwMzE0') { 
+      var sourceCodeElement = document.getElementById('sourceCode');
+      var code = document.documentElement.innerHTML;
+      sourceCodeElement.textContent = code;
+      Prism.highlightElement(sourceCodeElement);
+    } else {
+      alert('密码不正确！');
     }
+  }
+</script>
 
-    // 关闭弹窗
-    function closeModal() {
-      document.getElementById('modal').style.display = 'none';
-    }
-  </script>
-<!-- 底栏结束 -->
 
+
+
+<!-- 底栏 结束-->
 
 
 </div>
